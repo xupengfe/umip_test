@@ -1,4 +1,5 @@
 
+CC  = gcc
 LDFLAGS         += -fno-omit-frame-pointer
 CETFLAGS        = -fcf-protection=full -fno-stack-check -fno-stack-protector
 
@@ -27,8 +28,8 @@ umip_test_basic_64:
 	$(CC) -o umip_test_basic_64 umip_utils_64.o umip_test_basic.c
 
 umip_test_basic_64_cet:
-	$(CC) $(CETLFLAGS) -c umip_utils.c -o umip_utils_64_cet.o
-	$(CC) $(CETLFLAGS) -o umip_test_basic_64_cet umip_utils_64_cet.o umip_test_basic.c
+	$(CC) $(CETFLAGS) -c umip_utils.c -o umip_utils_64_cet.o
+	$(CC) $(CETFLAGS) -o umip_test_basic_64_cet umip_utils_64_cet.o umip_test_basic.c
 
 clean:
 	rm -f umip_test umip_test_basic_64 umip_test_basic_64_cet *.o
